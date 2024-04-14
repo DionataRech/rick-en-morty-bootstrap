@@ -1,0 +1,180 @@
+body {
+  background-image: url(../images/FUNDO_3.jpg);
+
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 280vh;
+}
+
+header {
+  height: 80vh;
+}
+
+.img-icon-nav {
+  height: 4.5vh;
+}
+
+.img-icon-nav:hover {
+  background-color: #56cd42;
+  border-radius: 50%;
+  height: 4.5vh;
+}
+
+.titulo-index {
+  font-size: 5em;
+  color: #56cd42;
+  top: 0px;
+  animation: titulo forwards 2s ease-out;
+}
+
+@keyframes titulo {
+  from {
+    height: 5vh;
+    color: black;
+  }
+  to {
+    height: 10vh;
+    color: #56cd42;
+  }
+}
+
+.animated-letter {
+  display: inline-block;
+  animation: bounce 0.5s 3s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    z-index: 0;
+    transform: translateY(5);
+  }
+  100% {
+    z-index: 999;
+
+    transform: translateY(-10px);
+  }
+}
+
+.input-group-text {
+  color: #105718 !important;
+}
+
+.input-form-control {
+  border-right: none !important;
+}
+.navbar {
+  background-color: #ff010100 !important;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  color: #56cd42;
+  transform: translateY(-50%);
+  font-size: 1em;
+}
+
+main {
+  width: 100%;
+  height: 160vh;
+}
+
+footer {
+  height: 30vh;
+  background-color: #105718;
+}
+.row-footer {
+  margin-top: 10%;
+}
+
+.search-input {
+  width: 850px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: black;
+  color: #56cd42;
+  border-color: white;
+}
+
+input::placeholder {
+  color: #56cd42;
+  text-align: center;
+}
+
+.div-card {
+  max-width: 540px;
+  background-color: #354338;
+  color: white;
+}
+
+.card {
+  margin: 15px;
+  border: none 1px solid rgb(0, 0, 0) !important;
+  border-radius: 10px !important;
+  background-color: #354338 !important;
+}
+
+.vivo {
+  background-color: #56cd42;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.morto {
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.desconhecido {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.375rem;
+  background: rgb(158, 158, 158);
+  border-radius: 50%;
+}
+
+.ancora-modal {
+  text-decoration: none;
+}
+.ancora-modal:hover {
+  color: #56cd42 !important;
+}
+
+.btn-dark {
+  border-radius: 40px !important;
+  border-color: #56cd42;
+  color: #c9c561 !important;
+  background-color: #10571800;
+  height: 5vh;
+  width: 15vw;
+}
+
+.btn-dark:hover {
+  background-color: #56cd42 !important;
+  color: black !important;
+  border-color: white !important;
+}
+
+.infos {
+  color: #56cd42;
+}
+
+.text-subtitle {
+  color: rgb(158, 158, 158);
+}
+
+.btn-col {
+  margin-right: 200px;
+}

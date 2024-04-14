@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Rick end Morty</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <img class="img-icon-nav" src="./images/RICK_MORTY_ICON.png" alt="" />
+        </div>
+      </nav>
+    </div>
+    <header class="d-flex align-items-center">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 justify-content-center d-flex">
+            <p class="titulo-index animated-text fw-bold">
+              A<span class="animated-letter">p</span>i d<span
+                class="fw-bold animated-letter"
+                >e</span
+              >
+              R<span class="animated-letter">i</span>c<span
+                class="animated-letter"
+                >k</span
+              >
+              e<span class="fw-bold animated-letter">n</span>d
+              <span class="animated-letter">M</span>o<span
+                class="animated-letter"
+                >r</span
+              >t<span class="animated-letter">y</span>
+            </p>
+          </div>
+          <div class="col-12 justify-content-center d-flex">
+            <div class="input-wrapper">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Pesquisar"
+                aria-label="Pesquisar"
+                aria-describedby="button-addon2"
+                id="btnProcurar"
+                onchange="btnProcurar()"
+              />
+              <span class="input-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container container-main">
+        <div id="card-container" class="row justify-content-start"></div>
+        <div id="pagination" class="text-center mt-4"></div>
+      </div>
+    </main>
+    <div class="row">
+      <div class="col mt-3 d-flex btn-col me-5 justify-content-center">
+        <div class="btn-btn" role="group" aria-label="Basic outlined example">
+          <button
+            type="button"
+            class="btn fw-bold btn-dark m-5 btn-outline-primary"
+            onclick="paginaAnterior()"
+          >
+            Voltar
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-dark fw-bold"
+            onclick="proximaPagina()"
+          >
+            Proxima
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="flex-column justify-content-around align-items-center d-flex"
+    >
+      <div id="info-footer" class="d-flex"></div>
+      <small class="infos fw-bold"
+        >Desenvolvido por:
+        <span class="text-light fw-bold fs-5">Dionata Rech</span> em 2024</small
+      >
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/api.js"></script>
+    <script src="./assets/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
