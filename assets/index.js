@@ -30,12 +30,8 @@ const pegarPersonagens = () => {
 
       await personagens.map(function (character, index) {
         const ultimoEpisodeo = character.episode.at(-1);
-        const stutasClass = character.status === "Alive" ? "vivo" : "morto";
 
-        api
-          .get(ultimoEpisodeo)
-          .then(function (episode) {
-            let cardHtml = ` 
+        let cardHtml = ` 
             <div class="col-6">
             <div class="card mb-3">
               <div class="row g-0" id="row-cards">
@@ -48,7 +44,7 @@ const pegarPersonagens = () => {
                     ${character.name}
                     </a>
                     <p class="card-text text-light fw-bold">
-                    <span class="${stutasClass}"></span>
+                    <span class="${character.status}"></span>
                     ${character.status} - ${character.species}
                     </p>
                     <p class="card-text  text-subtitle fw-bold">
@@ -59,7 +55,7 @@ const pegarPersonagens = () => {
                     </p>
                     <p class="card-text text-subtitle fw-bold">
                       Último episódio visto: </br>
-                      <span class="text-light fw-bold">${episode.data.name}</span>
+                      <span class="text-light fw-bold" id="episodeo-${character.id}">--------</span>
                     </p>
                     
                   </div>
@@ -94,12 +90,21 @@ const pegarPersonagens = () => {
           </div>
         </div>
         `;
-            if (index > 4) {
-              cardHtml =
-                '<div class="col-6 d-flex justify-content-end"></div>' +
-                cardHtml;
-            }
-            containerCards.innerHTML += cardHtml;
+        if (index > 4) {
+          cardHtml =
+            '<div class="col-6 d-flex justify-content-end"></div>' + cardHtml;
+        }
+        containerCards.innerHTML += cardHtml;
+
+        api
+          .get(ultimoEpisodeo)
+          .then(function (episode) {
+            const episodeNome = episode.data.name;
+            const episeoID = document.getElementById(
+              `episodeo-${character.id}`
+            );
+
+            episeoID.innerHTML = episodeNome;
           })
           .catch(function (error) {
             console.log(error);
@@ -133,7 +138,7 @@ const btnProcurar = async () => {
       .value.toLowerCase();
 
     const response = await api.get(`/character/?name=${btnProcurar}`);
-    const personagens = response.datpersonagens;
+    const personagens = response.data.results;
 
     containerCards.innerHTML = ``;
 
@@ -144,7 +149,7 @@ const btnProcurar = async () => {
 
       const nomeEpisodeo = episodeo.data.name;
       if (index < 6) {
-        let htmlCard = `
+        let cardHtml = `
         <div class="col-6">
           <div class="card mb-3">
             <div class="row g-0" id="row-cards">
@@ -168,7 +173,7 @@ const btnProcurar = async () => {
                   </p>
                   <p class="card-text my-text-body">
                     Último episódio visto: </br>
-                    <span class="text-white">${episodeName}</span>
+                    <span class="text-white">${nomeEpisodeo}</span>
                   </p>
                 </div>
               </div>
